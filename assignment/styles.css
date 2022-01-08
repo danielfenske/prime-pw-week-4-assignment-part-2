@@ -1,29 +1,31 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
 /*LAYOUT*/
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 4fr 25px 1fr;
+  grid-template-columns: 3fr 1fr 3fr;
+  grid-template-rows: 50px 4fr 25px 1fr 1fr;
   width: 100vw;
+  height: 100vh;
 }
 
 .main-image {
   display: grid;
-  grid-area: 1 / 1 / 2 / 5;
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 .space {
   display: grid;
-  grid-area: 2 / 1 / 3 / 5;
+  grid-area: 3 / 2 / 4 / 3;
 }
 
 .gallery-images {
   display: grid;
-  grid-area: 3 / 1 / 4 / 5;
+  grid-area: 4 / 2 / 5 / 3;
 }
 
 .hero {
@@ -36,6 +38,7 @@
 .image-grid {
   display: flex;
   justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
 }
@@ -43,8 +46,17 @@
 .group {
   display: flex;
   justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
+}
+
+.text-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* POSITIONING */
@@ -69,30 +81,84 @@
 
 header {
   background-color: #324ab2;
-  padding: 25px;
+}
+
+body {
+  background-color: #ededed;
 }
 
 .main-image {
-  background-color: #ededed;
+  background-color: white;
+}
+
+.gallery-images {
+  background-color: #324ab2;
+}
+
+.box {
+  padding: 25px;
 }
 
 /* IMAGE STYLING */
 
-.main-image img {
-  width: 860px;
-  height: auto;
-  padding: 10px;
+.hero img {
+  width: 800px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .image-grid img {
-  width: 200px;
-  height: auto;
-  padding: 10px;
+  width: 175px;
+  height: 100%;
 }
 
 /* TEXT STYLING */
 
-header h1, header p, .hero h2, .image-grid div {
+header h1, header p, .hero h2, .hero h3, .group div {
   font-family: Helvetica, Arial, sans-serif;
   color: white;
+}
+
+header {
+  padding: 25px;
+}
+
+.hero h2 {
+  letter-spacing: .15rem;
+  font-size: 35px;
+  background-color: #324ab2;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+}
+
+.hero h3 {
+  background-color: #324ab2;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+.group div {
+  letter-spacing: .05rem;
+  font-size: 16px;
+}
+
+
+/* OVERLAY */
+
+.overlay {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
 }
